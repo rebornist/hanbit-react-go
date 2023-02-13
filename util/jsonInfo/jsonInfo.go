@@ -13,7 +13,7 @@ type JSONConfig struct {
 }
 
 // NewConfig 함수 선언
-func NewJSONConfig(fn string) (JSONConfigService, error) {
+func NewJSONConfig(fn string) (JSONConfigInterface, error) {
 
 	// 현재 경로 출력
 	pwd, err := os.Getwd()
