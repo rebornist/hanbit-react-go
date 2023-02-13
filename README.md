@@ -1,10 +1,10 @@
 # 한빛교회 홈페이지 백엔드 기능 구현
 
-- Golang Webframework Gin을 활용한 홈페이지 구현 with html, css, js, ts, react... 
+- Golang Webframework Echo를 활용한 홈페이지 구현 
 
 ## Web Framework
 - Echo
-- go get -u github.com/gin-gonic/gin
+- go get github.com/labstack/echo/v4
 
 ## Logger
 - Logrus
@@ -12,4 +12,4 @@
 
 ## DBMS
 - Mysql
-- go get -u github.com/go-sql-driver/mysql
+- go get github.com/go-sql-driver/mysql
