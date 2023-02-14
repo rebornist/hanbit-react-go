@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"hanbit-react/auth"
+	"hanbit-react/user"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -10,7 +10,7 @@ import (
 func (r *Controller) AuthController(c echo.Context) error {
 
 	// 인증 서비스 생성
-	a, err := auth.NewAuthService()
+	u, err := user.NewUserService()
 	if err != nil {
 		r.res.Code = http.StatusInternalServerError
 		r.res.Msg = "Internal Server Error"
@@ -19,7 +19,7 @@ func (r *Controller) AuthController(c echo.Context) error {
 	}
 
 	// 유저 목록 가져오기
-	users, err := a.GetAllUsers()
+	users, err := u.GetAllUsers()
 	if err != nil {
 		r.res.Code = http.StatusInternalServerError
 		r.res.Msg = "Internal Server Error"

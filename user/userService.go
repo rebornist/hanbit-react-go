@@ -1,9 +1,9 @@
-package auth
+package user
 
 import (
 	"hanbit-react/types"
 )
 
-type AuthSerivce interface {
+type UserSerivce interface {
 	GetAllUsers() ([]types.User, error)
 }
