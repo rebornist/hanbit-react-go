@@ -1,12 +1,12 @@
-package model
+package auth
 
 import (
 	"hanbit-react/types"
 )
 
-func (db *DBLayer) GetAllUsers() ([]types.User, error) {
+func (a *Auth) GetAllUsers() ([]types.User, error) {
 	// fetch users from db
-	rows, err := db.Query("SELECT id, phone, username, email FROM public.tb_users")
+	rows, err := a.db.Query("SELECT id, phone, username, email FROM public.tb_users")
 	if err != nil {
 		return nil, err
 	}

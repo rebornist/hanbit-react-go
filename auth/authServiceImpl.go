@@ -1,4 +1,4 @@
-package controller
+package auth
 
 import (
 	"database/sql"
@@ -6,14 +6,15 @@ import (
 	"hanbit-react/util/dblayer"
 )
 
-// HandlerService is a struct that implements ControllerInterface
-type Controller struct {
+// Connection info for the DB
+type Auth struct {
 	db  *sql.DB
 	res network.Response
 }
 
 // NewHandler is a function that returns ControllerInterface
-func NewController() (ControllerInterface, error) {
+func NewAuthService() (AuthSerivce, error) {
+
 	// 기본 응답 객체 생성
 	var res network.Response
 
@@ -23,10 +24,11 @@ func NewController() (ControllerInterface, error) {
 		return nil, err
 	}
 
+	// Mysql Connection
 	db, err := mysql.MysqlConnection()
 	if err != nil {
 		return nil, err
 	}
 
-	return &Controller{db: db, res: res}, nil
+	return &Auth{db: db, res: res}, nil
 }

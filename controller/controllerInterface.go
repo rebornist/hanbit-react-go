@@ -8,6 +8,6 @@ type ControllerInterface interface {
 	// Index Page
 	IndexController(e echo.Context) error
 
-	// User Page
-	UserController(e echo.Context) error
+	// Auth
+	AuthController(e echo.Context) error
 }

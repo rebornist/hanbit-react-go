@@ -1,9 +1,9 @@
-package model
+package auth
 
 import (
 	"hanbit-react/types"
 )
 
-type DBLayerInterface interface {
+type AuthSerivce interface {
 	GetAllUsers() ([]types.User, error)
 }

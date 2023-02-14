@@ -48,7 +48,7 @@ func RunAPIWithHandler(addr string, h controller.ControllerInterface) error {
 	// Routes
 	api := e.Group("/api")
 	api.GET("/index", h.IndexController)
-	api.GET("/users", h.UserController)
+	api.GET("/users", h.AuthController)
 
 	return e.Start(addr)
 }
