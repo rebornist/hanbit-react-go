@@ -1,4 +1,4 @@
-package crypto
+package crypt
 
 import (
 	"bytes"
@@ -8,7 +8,7 @@ import (
 	"fmt"
 )
 
-func (c *Crypto) DecryptAES(txt string) (string, error) {
+func (c *Crypt) DecryptAES(txt string) (string, error) {
 
 	// 암호화된 문자열 byte 타입으로 변환
 	ciphertext, err := base32.StdEncoding.DecodeString(txt)

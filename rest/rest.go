@@ -3,7 +3,7 @@
 package rest
 
 import (
-	"hanbit-react/controller"
+	"hanbit-react/view"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -11,14 +11,14 @@ import (
 )
 
 func RunAPI(addr string) error {
-	h, err := controller.NewController()
+	v, err := view.NewViewService()
 	if err != nil {
 		return err
 	}
-	return RunAPIWithHandler(addr, h)
+	return RunAPIWithHandler(addr, v)
 }
 
-func RunAPIWithHandler(addr string, h controller.ControllerInterface) error {
+func RunAPIWithHandler(addr string, v view.ViewSerivce) error {
 	// Get Echo instance
 	e := echo.New()
 
@@ -47,8 +47,8 @@ func RunAPIWithHandler(addr string, h controller.ControllerInterface) error {
 
 	// Routes
 	api := e.Group("/api")
-	api.GET("/index", h.IndexController)
-	api.GET("/users", h.AuthController)
+	api.GET("/index", v.IndexView)
+	api.GET("/users", v.LoginView)
 
 	return e.Start(addr)
 }

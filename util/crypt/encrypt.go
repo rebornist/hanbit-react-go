@@ -1,4 +1,4 @@
-package crypto
+package crypt
 
 import (
 	"crypto/aes"
@@ -8,7 +8,7 @@ import (
 	"io"
 )
 
-func (c *Crypto) EncryptAES(txt string) (string, error) {
+func (c *Crypt) EncryptAES(txt string) (string, error) {
 
 	// 전달받은 문자열 byte 타입으로 변환
 	plaintext := []byte(txt)

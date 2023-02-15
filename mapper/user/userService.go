@@ -6,4 +6,5 @@ import (
 
 type UserSerivce interface {
 	GetAllUsers() ([]types.User, error)
+	GetUserByUsername(string) (types.User, error)
 }

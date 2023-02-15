@@ -1,4 +1,4 @@
-package crypto
+package crypt
 
 import (
 	"crypto/aes"
@@ -6,13 +6,13 @@ import (
 	"hanbit-react/util/component"
 )
 
-type Crypto struct {
+type Crypt struct {
 	cipher.Block
 }
 
-func NewCryptoService() (CryptoService, error) {
+func NewCryptService() (CryptService, error) {
 
-	conf, err := component.NewJSONConfig("config.json")
+	conf, err := component.NewJSONConfig("config_local.json")
 	if err != nil {
 		return nil, err
 	}
@@ -28,5 +28,5 @@ func NewCryptoService() (CryptoService, error) {
 		return nil, err
 	}
 
-	return &Crypto{cipher}, nil
+	return &Crypt{cipher}, nil
 }
